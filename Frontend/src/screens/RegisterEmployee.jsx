@@ -6,9 +6,10 @@ const RegisterEmployee = () => {
   const [organization, setOrganization] = useState("");
   const [role, setRole] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const url = `https://ems-zxud.onrender.com/api/employees`;
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:8000/api/employees", {
+    fetch(`${url}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, organization, role }),

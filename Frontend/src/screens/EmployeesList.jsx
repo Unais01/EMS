@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { FaTrash, FaEdit } from "react-icons/fa";
-import {Header} from "../components";
+import { Header } from "../components";
 const EmployeesList = () => {
   const [data, setData] = useState([]);
   const [deleteSuccessMessage, setDeleteSuccessMessage] = useState("");
 
-  const url = `http://localhost:8000/api/employees`;
+  const url = `https://ems-zxud.onrender.com/api/employees`;
 
   useEffect(() => {
     fetch(url)
@@ -28,7 +28,7 @@ const EmployeesList = () => {
   }, [deleteSuccessMessage]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:8000/api/employees/${id}`, {
+    fetch(`${url}/${id}`, {
       method: "DELETE",
     })
       .then((resp) => resp.json())
@@ -45,7 +45,7 @@ const EmployeesList = () => {
 
   return (
     <div>
-      {" "}
+
       <Header />
       <div className="container mx-auto py-8">
         {deleteSuccessMessage && (

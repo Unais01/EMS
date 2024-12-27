@@ -8,9 +8,9 @@ const UpdateEmployee = () => {
   const [organization, setOrganization] = useState("");
   const [role, setRole] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-
+  const url = `https://ems-zxud.onrender.com/api/employees`;
   useEffect(() => {
-    fetch(`http://localhost:8000/api/employees/${id}`)
+    fetch(`${url}/${id}`)
       .then((resp) => resp.json())
       .then((data) => {
         const { name, email, organization, role } = data.employee;
@@ -23,7 +23,7 @@ const UpdateEmployee = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:8000/api/employees/${id}`, {
+    fetch(`${url}/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, organization, role }),
