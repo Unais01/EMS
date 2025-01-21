@@ -5,7 +5,7 @@ const EmployeesList = () => {
   const [data, setData] = useState([]);
   const [deleteSuccessMessage, setDeleteSuccessMessage] = useState("");
 
-  const url = `https://ems-zxud.onrender.com/api/employees`;
+  const url = `https://simple-ems.onrender.com/api/employees`;
 
   useEffect(() => {
     fetch(url)
@@ -45,7 +45,6 @@ const EmployeesList = () => {
 
   return (
     <div>
-
       <Header />
       <div className="container mx-auto py-8">
         {deleteSuccessMessage && (

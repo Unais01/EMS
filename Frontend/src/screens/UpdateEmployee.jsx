@@ -8,7 +8,7 @@ const UpdateEmployee = () => {
   const [organization, setOrganization] = useState("");
   const [role, setRole] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-  const url = `https://ems-zxud.onrender.com/api/employees`;
+  const url = `https://simple-ems.onrender.com/api/employees`;
   useEffect(() => {
     fetch(`${url}/${id}`)
       .then((resp) => resp.json())
